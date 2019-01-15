@@ -112,10 +112,15 @@ if [ "$ANSWER" == "NO" ]; then
     yes_or_no_to_go
 fi
 
+src_file_name="$(realpath "${SRC_FILE}")"
+abs_src_path="${src_file_name%/*}"
+
+
+
 ${SUDO} mkdir -p ${SRC_DIR}
 pushd ${SRC_DIR}
-${SUDO} scp ${SRC_FILE} .
-${SUDO} tar xvzf ${SRC_FILE}
+${SUDO} scp ${abs_src_path}/${scr_file_name} .
+${SUDO} tar xvzf ${src_file_name}
 popd
 
 

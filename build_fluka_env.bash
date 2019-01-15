@@ -82,7 +82,7 @@ function print_options
 
 
 
-options=":t:"
+options=":t:y"
 
 ANSWER="NO"
 
@@ -137,6 +137,9 @@ fi
 pushd ${FLUPRO}
 ${SUDO} make
 popd
+
+${SUDO} cp -f ${SC_TOP}/set_fluka_env.bash ${FLUPRO}/
+
 
 printf "\n"
 printf "\n"

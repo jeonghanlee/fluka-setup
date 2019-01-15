@@ -2,17 +2,30 @@ FLUKA Installation
 ====
 
 
-* Download fluka2011.2x-linux-gfor64bitAA.tar.gz into a directory
+* Download fluka2011.2x-linux-gfor64bitAA.tar.gz into ~/Download/
+
+* Download fluka-setup (not necessary if it exists)
+
+```
+git clone https://github.com/jeonghanlee/fluka-setup
+```
+
 
 * Run setup_fluka_env.bash
 
 ```
-fluka-setup]$ bash setup_fluka_env.bash -t /opt/fluka/2011.2x.4 -s fluka_src/fluka2011.2x-linux-gfor64bitAA.tar.gz setup
+Downloads]$ bash fluka-setup/setup_fluka_env.bash -t /opt/fluka/2011.2x.4/ -s fluka2011.2x-linux-gfor64bitAA.tar.gz setup
 
 ```
 
 * Build the fluka and its executable files
 
 ```
-fluka-setup]$ bash build_fluka_env.bash -t /opt/fluka/2011.2x.4 setup 
+Downloads]$ bash fluka-setup/build_fluka_env.bash -t /opt/fluka/2011.2x.4 setup
 ```
+
+* add the following line in .bashrc
+```
+alias goFluka='source /opt/fluka/2011.2x.4/set_fluka_env.bash'
+```
+
