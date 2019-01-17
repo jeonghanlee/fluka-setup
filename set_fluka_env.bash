@@ -40,8 +40,14 @@ source /opt/rh/devtoolset-7/enable
 
 fortran_compiler="gfortran"
 
-export FLUPRO=${SRC_DIR}
-export FLUFOR=${fortran_compiler}
+
+FLUPRO=${SRC_DIR}
+FLUFOR=${fortran_compiler}
+
+export FLUPRO
+export FLUFOR
+
+
 
 print_options
 

@@ -117,10 +117,10 @@ abs_src_path="${src_file_name%/*}"
 
 
 
-${SUDO} mkdir -p ${SRC_DIR}
+${SUDO} mkdir -p -m a=rwx ${SRC_DIR}
 pushd ${SRC_DIR}
-${SUDO} scp ${abs_src_path}/${scr_file_name} .
-${SUDO} tar xvzf ${src_file_name}
+scp ${abs_src_path}/${scr_file_name} .
+tar xvzf ${src_file_name}
 popd
 
 

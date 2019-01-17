@@ -109,9 +109,11 @@ source /opt/rh/devtoolset-7/enable
 
 fortran_compiler="gfortran"
 
-export FLUPRO=${SRC_DIR}
-export FLUFOR=${fortran_compiler}
+FLUPRO=${SRC_DIR}
+FLUFOR=${fortran_compiler}
 
+export FLUPRO
+export FLUFOR
 
 case "$1" in
 
@@ -135,10 +137,10 @@ if [ "$ANSWER" == "NO" ]; then
 fi
 
 pushd ${FLUPRO}
-${SUDO} make
+make
 popd
 
-${SUDO} cp -f ${SC_TOP}/set_fluka_env.bash ${FLUPRO}/
+cp -f ${SC_TOP}/set_fluka_env.bash ${FLUPRO}/
 
 
 printf "\n"
@@ -150,8 +152,8 @@ if [ "$ANSWER" == "NO" ]; then
 fi
 	
 pushd ${FLUPRO}
-${SUDO} flutil/lfluka -m fluka
-${SUDO} flutil/ldpmqmd
+flutil/lfluka -m fluka
+flutil/ldpmqmd
 popd
 
 
