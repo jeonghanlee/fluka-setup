@@ -10,7 +10,8 @@ sudo yum-config-manager --enable rhel-server-rhscl-7-rpms
 sudo yum install devtoolset-7
 ```
 
-* 2011.2x.4 : devtoolset-8.x86_64
+* 2011.2x.4 : devtoolset-7.x86_64
+  
 
 cannot find this
 
@@ -30,12 +31,18 @@ git clone https://github.com/jeonghanlee/fluka-setup
 
 
 
-* Run setup_fluka_env.bash 
+- Run setup_fluka_env.bash 
 
-```
-[Downloads]$ bash fluka-setup/setup_fluka_env.bash -t /opt/fluka/2011.2x.4/ -s fluka2011.2x-linux-gfor64bitAA.tar.gz setup
+  - gcc8
+  
+    ```
+    [Downloads]$ bash fluka-setup/setup_fluka_env.bash -t /opt/fluka/2011.2x.4/ -s fluka2011.2x-linux-gfor64bitAA.tar.gz setup
 
-```
+    ```
+  - gcc7
+    ```
+    bash fluka-setup/setup_fluka_env.bash -t /opt/fluka/2011.2x.4/ -s fluka2011.2x-linux-gfor64bit-7.3-AA.tar.gz setup
+    ```
 
 * Build the fluka and its executable files
 
